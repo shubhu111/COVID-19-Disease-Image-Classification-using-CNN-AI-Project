@@ -31,9 +31,9 @@ The project includes a detailed Jupyter Notebook (Project.ipynb) that contains t
 - (Optional) Export the trained model using joblib to deploy or integrate with other applications.
 - after load the joblib file use following code for prediction
   ```
-  from tensorflow.keras.preprocessing.image import load_img , img_to_array
-  classes = ['Covid' , 'Normal' , 'Viral Pneumonia']
-  def predict(path):
+  from tensorflow.keras.preprocessing.image import load_img , img_to_array # required functions 
+  classes = ['Covid' , 'Normal' , 'Viral Pneumonia'] #classes
+  def predict(path):  # prediction function
     img = load_img(path , target_size = (512,512,3))
     img_arr = img_to_array(img)
     norm= img_arr/255.0
@@ -58,9 +58,9 @@ Programming Language: Python
 Project.ipynb: Main notebook with code for data preprocessing, model training, evaluation, and visualizations.
 Model dump file Covid_19_Disease_Image_classification_project.joblib is too large to upload but can be recreated using the provided code.
 ```
-import joblib
-from joblib import dump
-dump(model, 'Covid_19_image_classification_project.joblib')
+import joblib # import joblib library
+from joblib import dump #import dump() function
+dump(model, 'Covid_19_image_classification_project.joblib') # dump the model
 ```
 Dataset: Folder structure expected to have separate directories for training, validation, and testing images for each class.
 

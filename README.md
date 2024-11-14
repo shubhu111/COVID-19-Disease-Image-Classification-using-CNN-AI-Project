@@ -31,6 +31,7 @@ The project includes a detailed Jupyter Notebook (Project.ipynb) that contains t
 - (Optional) Export the trained model using joblib to deploy or integrate with other applications.
 - after load the joblib file use following code for prediction
   ```
+  from tensorflow.keras.preprocessing.image import load_img , img_to_array
   classes = ['Covid' , 'Normal' , 'Viral Pneumonia']
   def predict(path):
     img = load_img(path , target_size = (512,512,3))
